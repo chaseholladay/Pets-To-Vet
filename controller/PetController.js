@@ -16,8 +16,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function (req, res) {
+    console.log(req.params.email);
+    let newEmail = req.params.email.replace("@", "%40");
+    console.log(newEmail);
     db.Pet
-      .find({ OwnerEmail: req.params.email })
+      .find({ OwnerEmail: newEmail })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

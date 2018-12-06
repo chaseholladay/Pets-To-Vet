@@ -6,9 +6,7 @@ import NewPetForm from "../../components/newPetForm";
 // import Modal from "../../components/Modal";
 import { Modal, Button } from 'react-materialize'
 import medicalNotesForm from '../../components/medicalNotesForm';
-import Auth from '../../modules/Auth';
 import axios from 'axios';
-const AuthToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YzA1ODMzODkwYWEwYTI5YmMzMDI4YjUiLCJpYXQiOjE1NDQxMjAxOTN9.M9NaIfnjFZIUeLvbWdPK0rDGxCJriRMjT7J489ZQR2Q"
 
 // import Nav from "../../components/Nav";
 

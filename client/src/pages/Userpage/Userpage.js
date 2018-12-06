@@ -20,16 +20,18 @@ class Userpage extends Component {
 
     config = {
         method: "get",
-        url: "/api/Pets",
+        url: "/api/Pets/ByEmail/" + localStorage.getItem('user'),
         headers: { "Authorization": `bearer ${Auth.getToken()}` },
         responseType: 'json'
     }
 
     componentDidMount() {
         axios(this.config)
-            .then((response)=> {
+
+            .then((response) => {
                 console.log(response);
-                this.setState({Petinfo: response.data})
+                this.setState({ Petinfo: response.data })
+
             })
     }
 

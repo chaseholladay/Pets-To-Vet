@@ -3,12 +3,15 @@ import '../../pages/Homepage/Homepage.css';
 import Input from "../Input";
 import ModalTrigger from "../ModalTrigger";
 import API from "../../utils/API";
+import Auth from '../../modules/Auth';
+import axios from "axios";
+
 
 class NewPetForm extends Component {
 
     state = {
         currentUser: [],
-        Owner: "",
+        OwnerEmail: "",
         name: "",
         dob: "",
         age: "",
@@ -28,16 +31,49 @@ class NewPetForm extends Component {
     // loadUser = event =>{
     //     API.getUser
     // }
+    // config = {
+    //     method: "post",
+    //     url: "/api/Pets",
+    //     headers: { "Authorization": `bearer ${Auth.getToken()}` },
+    //     data: {
+    //         name: this.state.name,
+    //         dob: this.state.dob,
+    //         age: this.state.age,
+    //         type: this.state.type,
+    //         breed: this.state.breed,
+    //         gender: this.state.gender,
+    //         food: this.state.food,
+    //         otherAnimals: this.state.otherAnimals,
+    //         vaccines: this.state.vaccines
+    //     },
+    //     responseType: 'json'
+    // }
 
-    handleNewPet = () => {
-        API.addPet({
-            name: this.state.name,
-            dob: this.state.dob,
-            age: this.state.age,
-            type: this.state.type,
-            breed: this.state.breed
-        }).then(res => console.log(res))
-            .catch(err => console.log(err));
+    handleNewPet = event => {
+        event.preventDefault()
+        let config = {
+            method: "post",
+            url: "/api/Pets",
+            headers: { "Authorization": `bearer ${Auth.getToken()}` },
+            data: {
+                OwnerEmail: localStorage.getItem('user'),
+                name: this.state.name,
+                dob: this.state.dob,
+                age: this.state.age,
+                type: this.state.type,
+                breed: this.state.breed,
+                gender: this.state.gender,
+                food: this.state.food,
+                otherAnimals: this.state.otherAnimals,
+                vaccines: this.state.vaccines
+            },
+            responseType: 'json'
+        }
+
+        axios(config)
+        .then( (response) => {
+            console.log(response)
+        })
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -72,7 +108,7 @@ class NewPetForm extends Component {
                     <Input change={this.handleInputChange} inputTitle="Vaccines" value={this.state.vaccines} name="vaccines" />
                     <Input change={this.handleInputChange} inputTitle="Type" value={this.state.type} name="type" />
                 </div>
-                <ModalTrigger click={this.handleNewPet} ID="submit" IDof="/userpage" buttonName="Submit" />
+                <input onClick={this.handleNewPet} type="submit" buttonName="Submit" ></input>
             </form>
 
         )

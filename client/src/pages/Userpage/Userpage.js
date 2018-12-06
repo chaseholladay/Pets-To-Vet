@@ -6,6 +6,9 @@ import NewPetForm from "../../components/newPetForm";
 // import Modal from "../../components/Modal";
 import { Modal, Button } from 'react-materialize'
 import medicalNotesForm from '../../components/medicalNotesForm';
+import Auth from '../../modules/Auth';
+import axios from 'axios';
+const AuthToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YzA1ODMzODkwYWEwYTI5YmMzMDI4YjUiLCJpYXQiOjE1NDQxMjAxOTN9.M9NaIfnjFZIUeLvbWdPK0rDGxCJriRMjT7J489ZQR2Q"
 
 // import Nav from "../../components/Nav";
 
@@ -16,19 +19,24 @@ class Userpage extends Component {
         Petinfo: []
     };
 
+    config = {
+        method: "get",
+        url: "/api/Pets",
+        headers: { "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YzA1ODMzODkwYWEwYTI5YmMzMDI4YjUiLCJpYXQiOjE1NDQxMjAxOTN9.M9NaIfnjFZIUeLvbWdPK0rDGxCJriRMjT7J489ZQR2Q" },
+        responseType: 'json'
+    }
+
     componentDidMount() {
-        this.loadPets();
+        axios(this.config)
+            .then(function (response) {
+                console.log(response);
+            })
     }
 
     // Need a way to get current user ID
     // loadUser = event =>{
     //     API.getUser
     // }
-
-    loadPets = () => {
-        API.getPets()
-            .then(res => this.setState({ Petinfo: res.data }))
-    }
 
     render() {
 

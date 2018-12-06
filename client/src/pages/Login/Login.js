@@ -53,8 +53,8 @@ class LoginPage extends React.Component {
             method: "post",
             url: "/auth/login",
             data: {
-                "email": email,
-                "password": password
+                email: email,
+                password: password
             },
             responseType: 'json'
 
@@ -62,7 +62,8 @@ class LoginPage extends React.Component {
         axios(config)
             .then(res => {
                 if (res.data.success) {
-                    console.log(res);
+                    console.log(JSON.parse(res.config.data).email);
+                    localStorage.setItem('user', JSON.parse(res.config.data).email);
                     // success
 
                     // change the component-container state

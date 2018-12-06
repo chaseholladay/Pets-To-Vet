@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import '../../pages/Homepage/Homepage.css';
 import Input from "../Input";
 import ModalTrigger from "../ModalTrigger";
-import API from "../../utils/api";
+import API from "../../utils/API";
 
-class NewPetForm extends Component{
+class NewPetForm extends Component {
 
-    state ={
+    state = {
         currentUser: [],
         Owner: "",
         name: "",
@@ -20,7 +20,7 @@ class NewPetForm extends Component{
         vaccines: []
     };
 
-    componentDidMount = () =>{
+    componentDidMount = () => {
         // this.loadUser()
     }
 
@@ -29,7 +29,7 @@ class NewPetForm extends Component{
     //     API.getUser
     // }
 
-    handleNewPet = () =>{
+    handleNewPet = () => {
         API.addPet({
             name: this.state.name,
             dob: this.state.dob,
@@ -37,45 +37,45 @@ class NewPetForm extends Component{
             type: this.state.type,
             breed: this.state.breed
         }).then(res => console.log(res))
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
     }
-    handleInputChange = event =>{
+    handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
         });
-       console.log(this.state)
+        console.log(this.state)
     }
 
     //for passport stuff??
     // handleSubmit = event =>{
-        
+
     // }
 
     render() {
-    
-    return(
-        <form>
-            <div className="col m6">
-                <Input change={this.handleInputChange} inputTitle="Name" value={this.state.name} name="name"/>
-                <Input change={this.handleInputChange} inputTitle="Date Of Birth" value={this.state.dob} name="dob"/>
-            </div>
-            <div className="col m6">
-                <Input change={this.handleInputChange} inputTitle="Age" value={this.state.age} name="age"/>
-                <Input change={this.handleInputChange} inputTitle="Breed" value={this.state.breed} name="breed"/>
-            </div>
-            <div className="col m6">
-                <Input change={this.handleInputChange} inputTitle="Food" value={this.state.food} name="food"/>
-                <Input change={this.handleInputChange} inputTitle="Gender" value={this.state.gender} name="gender"/>
-            </div>
-            <div className="col m6">
-                <Input change={this.handleInputChange} inputTitle="Vaccines" value={this.state.vaccines} name="vaccines"/>
-                <Input change={this.handleInputChange} inputTitle="Type" value={this.state.type} name="type"/>
-            </div>
-            <ModalTrigger click={this.handleNewPet} ID="submit" IDof="/userpage" buttonName="Submit"/>
-        </form>
 
-    )
+        return (
+            <form>
+                <div className="col m6">
+                    <Input change={this.handleInputChange} inputTitle="Name" value={this.state.name} name="name" />
+                    <Input change={this.handleInputChange} inputTitle="Date Of Birth" value={this.state.dob} name="dob" />
+                </div>
+                <div className="col m6">
+                    <Input change={this.handleInputChange} inputTitle="Age" value={this.state.age} name="age" />
+                    <Input change={this.handleInputChange} inputTitle="Breed" value={this.state.breed} name="breed" />
+                </div>
+                <div className="col m6">
+                    <Input change={this.handleInputChange} inputTitle="Food" value={this.state.food} name="food" />
+                    <Input change={this.handleInputChange} inputTitle="Gender" value={this.state.gender} name="gender" />
+                </div>
+                <div className="col m6">
+                    <Input change={this.handleInputChange} inputTitle="Vaccines" value={this.state.vaccines} name="vaccines" />
+                    <Input change={this.handleInputChange} inputTitle="Type" value={this.state.type} name="type" />
+                </div>
+                <ModalTrigger click={this.handleNewPet} ID="submit" IDof="/userpage" buttonName="Submit" />
+            </form>
+
+        )
     }
 }
 export default NewPetForm

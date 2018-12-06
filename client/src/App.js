@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Auth from "./modules/Auth";
 import Dashboard from "./pages/Dashboard";
+import UserPage from "./pages/Userpage";
 import Logout from "./components/Logout";
 
 const App = () => (
@@ -13,7 +14,7 @@ const App = () => (
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Auth.isUserAuthenticated() ? Dashboard : Homepage} />
+        <Route exact path="/" component={Auth.isUserAuthenticated() ? UserPage : Homepage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/dashboard" component={Dashboard} />

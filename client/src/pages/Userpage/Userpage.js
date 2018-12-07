@@ -23,9 +23,11 @@ class Userpage extends Component {
 
     componentDidMount() {
         axios(this.config)
+
             .then((response) => {
                 console.log(response);
                 this.setState({ Petinfo: response.data })
+
             })
     }
 

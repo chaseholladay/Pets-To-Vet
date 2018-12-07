@@ -1,4 +1,4 @@
 module.exports = {
-    "dbUri": "mongodb://localhost/pets-to-vets",
+    "dbUri": process.env.MONGODB_URI,
     "jwtSecret": "a secret phrase!!"
 };

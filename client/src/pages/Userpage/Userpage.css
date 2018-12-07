@@ -19,5 +19,15 @@ padding-bottom: 20%;
     margin-left: 37%;
     background-color: silver;
     width: 25%;
+    height: 130px;
     border-radius: 10px;
+    text-align: center;
+}
+
+h1{
+    margin-top: 0px;
+    font-size: 3.5rem;
+    line-height: 100%;
+    font-weight: bold;
+    color: darkcyan;
 }

@@ -72,7 +72,7 @@ class LoginPage extends React.Component {
                         successMessage: res.data.message
                     });
 
-                    Auth.authenticateUser(res.data.token)
+                    Auth.authenticateUser(res.data.token);
                 }
                 else {
                     const errors = {};

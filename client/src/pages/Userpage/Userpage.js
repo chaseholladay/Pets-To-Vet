@@ -27,17 +27,11 @@ class Userpage extends Component {
 
     componentDidMount() {
         axios(this.config)
-<<<<<<< HEAD
-            .then((response)=> {
-                console.log(response);
-                this.setState({Petinfo: response.data})
-=======
 
             .then((response) => {
                 console.log(response);
                 this.setState({ Petinfo: response.data })
 
->>>>>>> b6896b15696683384c28a73ffb41959331531d79
             })
     }
 

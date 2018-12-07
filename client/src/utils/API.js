@@ -24,5 +24,11 @@ export default {
   // Saves pet notes to the database
   addNote: function (petNotes) {
     return axios.post("/api/Notes", petNotes);
-  }
-};
+  },
+//Saves pet notes to the database
+  addNotes: function (petNotes) {
+   return axios.post("/api/Notes", petNotes);
+ },
+ getNotes: function (petId) {
+   return axios.get("/api/Notes/" + petId )
+ };

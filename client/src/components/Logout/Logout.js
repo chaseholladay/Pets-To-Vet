@@ -8,6 +8,7 @@ class Logout extends React.Component {
     componentDidMount() {
         localStorage.removeItem('user');
         Auth.deauthenticateUser();
+        window.location.reload();
     }
 
     render() {

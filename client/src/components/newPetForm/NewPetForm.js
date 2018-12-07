@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../../pages/Homepage/Homepage.css';
+import { Button } from 'react-materialize';
 import Input from "../Input";
 import Auth from '../../modules/Auth';
 import axios from "axios";
@@ -69,9 +70,10 @@ class NewPetForm extends Component {
         }
 
         axios(config)
-        .then( (response) => {
-            console.log(response)
-        })
+            .then((response) => {
+                console.log(response);
+                window.location.reload();
+            })
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -106,9 +108,8 @@ class NewPetForm extends Component {
                     <Input change={this.handleInputChange} inputTitle="Vaccines" value={this.state.vaccines} name="vaccines" />
                     <Input change={this.handleInputChange} inputTitle="Type" value={this.state.type} name="type" />
                 </div>
-                <input onClick={this.handleNewPet} type="submit" buttonName="Submit" ></input>
+                <Button className="btn waves-effect waves-light white-text" onClick={this.handleNewPet} type="submit" buttonName="Submit" >Submit</Button>
             </form>
-
         )
     }
 }

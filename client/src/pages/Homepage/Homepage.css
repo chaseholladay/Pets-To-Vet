@@ -4,3 +4,7 @@
     left: 50vw;
     padding: 3rem;
 }
+
+.btn-small{
+    height: auto !important;
+}

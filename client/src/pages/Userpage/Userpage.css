@@ -1,23 +1,18 @@
 Button{
     margin-top: 5%;
-    margin-left: 30%;
-}
-
-.container-fluid{
-background-image: url("./dust_scratches.png");
-padding-bottom: 20%;
 }
 
 .petscard{
     margin-left: 37%;
-    background-color: silver;
+    background-color: #fbc02d;
     width: 25%;
     border-radius: 10px;
+    text-align: center;
 }
 
 .header{
     margin-left: 37%;
-    background-color: silver;
+    background-color: #fbc02d;
     width: 25%;
     height: 130px;
     border-radius: 10px;
@@ -29,5 +24,5 @@ h1{
     font-size: 3.5rem;
     line-height: 100%;
     font-weight: bold;
-    color: darkcyan;
+    color: black;
 }

@@ -55,7 +55,7 @@ class Userpage extends Component {
             <Container fluid>
 
                 <CardPanel className="header">
-                    <h1>Your Pets</h1>
+                    <h1>Your Pets:</h1>
                 </CardPanel>
 
                 <CardPanel className="petscard">

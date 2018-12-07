@@ -1,12 +1,6 @@
 import React from 'react';
 import Auth from '../../modules/Auth';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Logout extends React.Component {
 

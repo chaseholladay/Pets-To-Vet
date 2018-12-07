@@ -1,0 +1,23 @@
+Button{
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.container-fluid{
+background-image: url("./dust_scratches.png");
+padding-bottom: 20%;
+}
+
+.petscard{
+    margin-left: 37%;
+    background-color: silver;
+    width: 25%;
+    border-radius: 10px;
+}
+
+.header{
+    margin-left: 37%;
+    background-color: silver;
+    width: 25%;
+    border-radius: 10px;
+}

@@ -25,3 +25,6 @@ export default {
   getNotes: function(petId) {
       return axios.get("/api/Notes/" + petId )
   }
+
+};
+
